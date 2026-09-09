@@ -10,6 +10,23 @@ python main.py
 
 Open http://localhost:8000/web/ in your browser. The UI includes canvas capture, crop/resize/center-of-mass preprocessing, confidence bars, and a live weighted network diagram. The checked-in `web/model_weights.json` is a real trained model, not a demo classifier.
 
+## Live GitHub Pages app
+
+Repository: https://github.com/ved-hubmax/Digit-recogniser-
+
+Live app: https://ved-hubmax.github.io/Digit-recogniser-/
+
+The browser app is hosted as a static GitHub Pages site. It runs the trained model entirely in the browser, so no Python server or backend is required after deployment.
+
+To enable hosting in a fork or another repository:
+
+1. Open **Settings > Pages** on GitHub.
+2. Set the source to **Deploy from a branch**.
+3. Select the `main` branch and the `/ (root)` folder.
+4. Click **Save**.
+
+The root `index.html` redirects visitors to the application in `web/`.
+
 ## Train real MNIST weights
 
 ```powershell
@@ -33,3 +50,4 @@ The canvas pipeline finds the non-empty bounding box, scales the longest edge in
 - `model/export_tfjs.py`: direct browser weight export script
 - `web/model_weights.json`: trained weights used by the browser
 - `main.py`: zero-dependency local server
+- `index.html`: GitHub Pages entry point
