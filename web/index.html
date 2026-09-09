@@ -28,16 +28,16 @@
         <p class="microcopy">Release your stroke to crop, resize, center by mass, and send the normalized 28 × 28 matrix through the network.</p>
       </div>
 
-      <div class="panel result-panel">
-        <div class="panel-heading"><div><p class="eyebrow">02 / prediction</p><h2>Readout</h2></div><span id="confidence-label" class="confidence-label">Awaiting input</span></div>
-        <div class="prediction"><span class="prediction-label">Most likely</span><strong id="prediction-digit">—</strong><span id="prediction-confidence">Draw something to begin</span></div>
-        <div class="bars" id="probability-bars"></div>
-      </div>
-
       <div class="panel network-panel">
-        <div class="panel-heading"><div><p class="eyebrow">03 / activation map</p><h2>Inside the network</h2></div><span class="legend"><i class="positive"></i> positive <i class="negative"></i> negative</span></div>
+        <div class="panel-heading"><div><p class="eyebrow">02 / architecture + activation</p><h2>Inside the network</h2></div><span class="legend"><i class="positive"></i> positive <i class="negative"></i> negative</span></div>
         <div class="network-stage"><canvas id="network-canvas" width="920" height="560"></canvas></div>
         <div class="network-footer"><span><b>Input</b> 28×28 pixels</span><span><b>Hidden</b> ReLU activations</span><span><b>Output</b> Softmax probabilities</span></div>
+      </div>
+
+      <div class="panel result-panel">
+        <div class="panel-heading"><div><p class="eyebrow">03 / prediction</p><h2>Readout</h2></div><span id="confidence-label" class="confidence-label">Awaiting input</span></div>
+        <div class="prediction"><span class="prediction-label">Most likely</span><strong id="prediction-digit">—</strong><span id="prediction-confidence">Draw something to begin</span></div>
+        <div class="bars" id="probability-bars"></div>
       </div>
     </section>
     <footer><span>MNIST-inspired · dense network</span><a href="../README.md">How this works ↗</a></footer>
