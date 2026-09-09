@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digit Recognizer Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="."><span class="brand-mark">∑</span><span>Digit Recognizer <em>Lab</em></span></a>
+      <div class="status"><span class="status-dot"></span><span id="model-status">Demo network ready</span></div>
+    </header>
+
+    <section class="intro">
+      <p class="kicker">A small neural network, made visible</p>
+      <h1>Draw a digit.<br><span>Watch it think.</span></h1>
+      <p class="lede">Sketch on the canvas and trace the signal through a 784 → 16 → 16 → 10 network.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="panel drawing-panel">
+        <div class="panel-heading"><div><p class="eyebrow">01 / input</p><h2>Your canvas</h2></div><span class="hint">0–9</span></div>
+        <div class="canvas-wrap compact-canvas"><canvas id="draw-canvas" width="320" height="320" aria-label="Draw a digit here"></canvas><span class="canvas-cross cross-one"></span><span class="canvas-cross cross-two"></span></div>
+        <div class="input-inspect"><div><p class="inspect-label">Model input</p><p class="inspect-value">28 × 28 · centered</p></div><canvas id="preprocessed-canvas" width="28" height="28" aria-label="Centered 28 by 28 model input"></canvas></div>
+        <div class="controls"><button id="clear-button" class="button secondary" type="button">Clear</button><button id="predict-button" class="button primary" type="button"><span>Recognize</span><span class="button-arrow">↗</span></button></div>
+        <p class="microcopy">Release your stroke to crop, resize, center by mass, and send the normalized 28 × 28 matrix through the network.</p>
+      </div>
+
+      <div class="panel result-panel">
+        <div class="panel-heading"><div><p class="eyebrow">02 / prediction</p><h2>Readout</h2></div><span id="confidence-label" class="confidence-label">Awaiting input</span></div>
+        <div class="prediction"><span class="prediction-label">Most likely</span><strong id="prediction-digit">—</strong><span id="prediction-confidence">Draw something to begin</span></div>
+        <div class="bars" id="probability-bars"></div>
+      </div>
+
+      <div class="panel network-panel">
+        <div class="panel-heading"><div><p class="eyebrow">03 / activation map</p><h2>Inside the network</h2></div><span class="legend"><i class="positive"></i> positive <i class="negative"></i> negative</span></div>
+        <div class="network-stage"><canvas id="network-canvas" width="920" height="560"></canvas></div>
+        <div class="network-footer"><span><b>Input</b> 28×28 pixels</span><span><b>Hidden</b> ReLU activations</span><span><b>Output</b> Softmax probabilities</span></div>
+      </div>
+    </section>
+    <footer><span>MNIST-inspired · dense network</span><a href="../README.md">How this works ↗</a></footer>
+  </main>
+  <script src="model_loader.js"></script>
+  <script src="network_viz.js"></script>
+  <script src="canvas.js"></script>
+</body>
+</html>
