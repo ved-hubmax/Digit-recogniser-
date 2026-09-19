@@ -5,7 +5,7 @@ import tensorflow as tf
 
 
 root = Path(__file__).parent.parent
-model_path = root / "model" / "mnist_dense_128_64.h5"
+model_path = root / "model" / "mnist_dense_16_16.h5"
 model = tf.keras.models.load_model(model_path)
 
 hidden_layers = [layer for layer in model.layers if isinstance(layer, tf.keras.layers.Dense)]

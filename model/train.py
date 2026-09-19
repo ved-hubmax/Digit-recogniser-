@@ -6,9 +6,9 @@ import tensorflow as tf
 def build_model():
     return tf.keras.Sequential([
         tf.keras.layers.Input(shape=(784,), name="pixels"),
-        tf.keras.layers.Dense(128, activation="relu", name="hidden_1"),
+        tf.keras.layers.Dense(16, activation="relu", name="hidden_1"),
         tf.keras.layers.Dropout(0.2),
-        tf.keras.layers.Dense(64, activation="relu", name="hidden_2"),
+        tf.keras.layers.Dense(16, activation="relu", name="hidden_2"),
         tf.keras.layers.Dropout(0.1),
         tf.keras.layers.Dense(10, activation="softmax", name="digits"),
     ])

@@ -1,5 +1,5 @@
 const DigitModel = (() => {
-  let sizes = [784, 128, 64, 10];
+  let sizes = [784, 16, 16, 10];
   let weights = null;
   let biases = null;
   const relu = value => Math.max(0, value);
