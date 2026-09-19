@@ -1,6 +1,6 @@
 # Digit Recognizer Lab
 
-A browser-based, MNIST-inspired handwritten digit recognizer. Draw a digit and inspect the signal through an interpretable dense network: **784 → 16 → 16 → 10**.
+A browser-based, MNIST-inspired handwritten digit recognizer. Draw a digit and inspect the signal through an interpretable dense network: **784 → 32 → 32 → 10**.
 
 ## Run the browser app
 
@@ -37,7 +37,7 @@ python model/train.py
 python model/export_tfjs.py
 ```
 
-Training currently reaches about 95.6% test accuracy with the intentionally small 784-16-16-10 network. `model/export_tfjs.py` exports the learned matrices directly to `web/model_weights.json`; this avoids a TensorFlow/TensorFlow.js converter compatibility problem and keeps inference client-side with no backend.
+Training currently reaches about 97.0% test accuracy with the 784-32-32-10 network. `model/export_tfjs.py` exports the learned matrices directly to `web/model_weights.json`; this avoids a TensorFlow/TensorFlow.js converter compatibility problem and keeps inference client-side with no backend.
 
 ## Preprocessing
 

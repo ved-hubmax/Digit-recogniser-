@@ -1,5 +1,5 @@
 const DigitModel = (() => {
-  const sizes = [784, 16, 16, 10];
+  let sizes = [784, 128, 64, 10];
   let weights = null;
   let biases = null;
   const relu = value => Math.max(0, value);
@@ -13,6 +13,13 @@ const DigitModel = (() => {
     }
     return { probabilities: activations[3], activations, weights };
   };
-  const ready = fetch('model_weights.json').then(response => response.json()).then(model => { weights = model.weights; biases = model.biases; document.getElementById('model-status').textContent = 'MNIST network ready · 95.6% test accuracy'; document.getElementById('predict-button').disabled = false; });
+  const ready = fetch('model_weights.json').then(response => response.json()).then(model => {
+    sizes = model.sizes;
+    weights = model.weights;
+    biases = model.biases;
+    const hidden = sizes.slice(1, -1).join(' × ');
+    document.getElementById('model-status').textContent = `MNIST network ready · ${hidden} hidden layers`;
+    document.getElementById('predict-button').disabled = false;
+  });
   return { sizes, forward, ready, status: 'Loading trained MNIST network...' };
 })();
