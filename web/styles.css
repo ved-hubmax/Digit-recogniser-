@@ -405,7 +405,7 @@ footer a {
 
 .prediction strong {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 80px;
+  font-size: 88px;
   line-height: 0.9;
   letter-spacing: -0.05em;
   color: var(--ink);
@@ -413,22 +413,23 @@ footer a {
 
 .prediction-confidence {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .bars {
   display: grid;
   grid-template-columns: repeat(5, minmax(90px, 1fr));
-  gap: 10px 14px;
+  gap: 12px 14px;
 }
 
 .bar-row {
   display: grid;
-  grid-template-columns: 18px 1fr 48px;
+  grid-template-columns: 18px 1fr 58px;
   align-items: center;
   gap: 10px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .bar-row .bar-track {
